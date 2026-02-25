@@ -70,12 +70,15 @@ function HeroContent() {
   const reveal = mounted ? "hero-reveal" : "opacity-0";
 
   return (
-    <div className="site-container relative z-10 w-full h-full flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-12">
+    // CHANGED: 'sm:px-4' is now 'px-4 sm:px-0' to add side padding on mobile only
+    <div className="site-container relative z-10 w-full h-full flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-8 xl:gap-12 pt-4 pb-4 px-4 sm:px-0 lg:py-0">
+      
       {/* Left: Copy + features + CTA */}
-      <div className="w-full lg:w-[42%] xl:w-[40%] flex flex-col gap-6 md:gap-8 items-start z-20 mt-4 md:mt-8 lg:mt-0">
+      <div className="w-full lg:w-[45%] flex flex-col sm:ml-4 lg:ml-16 gap-6 md:gap-8 items-start z-20 lg:justify-center">
+        
         {/* Desktop: badge + headline block */}
-        <div className={`hidden lg:flex flex-col gap-4 transition-all duration-500 ${reveal}`} style={{ transitionDelay: "0.05s" }}>
-          <Badge className="w-fit bg-sky-500 hover:bg-sky-600 text-white border-0 px-4 py-1.5 text-xs font-bold shadow-lg shadow-sky-500/30">
+        <div className={`hidden lg:flex flex-col gap-4  transition-all duration-500 ${reveal}`} style={{ transitionDelay: "0.05s" }}>
+          <Badge className="w-fit  bg-sky-500 hover:bg-sky-600 text-white border-0 px-4 py-1.5 text-xs font-bold shadow-lg shadow-sky-500/30">
             {slide.badge}
           </Badge>
           <div className="flex items-center gap-4">
@@ -145,9 +148,9 @@ function HeroContent() {
         </div>
       </div>
 
-      {/* Right: 3D hero – larger on big screens, attractive on all */}
-      <div className="w-full h-[50vh] min-h-[280px] sm:h-[58vh] md:h-[68vh] lg:h-[88vh] lg:w-[58%] xl:w-[60%] lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 flex items-center justify-center lg:justify-end lg:pl-4 xl:pl-6 lg:pr-2 xl:pr-4">
-        <div className={`relative w-full h-full max-w-2xl lg:max-w-none rounded-xl md:rounded-2xl overflow-hidden shadow-xl shadow-slate-200/50 ${reveal}`} style={{ transitionDelay: "0.1s" }}>
+      {/* Right: 3D hero */}
+      <div className="w-full h-[50vh] min-h-[280px] sm:h-[58vh] md:h-[68vh] lg:w-[50%] lg:h-[80vh]  flex items-center justify-center">
+        <div className={`relative w-full h-full max-w-2xl xl:max-w-3xl   rounded-xl md:rounded-2xl overflow-hidden shadow-xl shadow-slate-200/50 ${reveal}`} style={{ transitionDelay: "0.1s" }}>
           <HeroScene />
         </div>
       </div>
@@ -206,9 +209,6 @@ export function HeroSection() {
       </div>
 
       <HeroContent />
-
-      {/* Accent strip (desktop) */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-sky-50/50 to-transparent -z-10 hidden lg:block" />
     </section>
   );
 }

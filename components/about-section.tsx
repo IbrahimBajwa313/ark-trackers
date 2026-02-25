@@ -22,6 +22,7 @@ export function AboutSection() {
       className={`relative min-h-screen section-padding bg-slate-50 overflow-hidden flex items-center ${sectionClass}`}
       id="about"
     >
+      {/* Background Grid */}
       <div
         className="absolute inset-0 z-0 opacity-40 pointer-events-none"
         style={{ maskImage: "linear-gradient(to bottom, transparent 0%, black 20%)", WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 20%)" }}
@@ -36,8 +37,8 @@ export function AboutSection() {
         </svg>
       </div>
 
-      <div className="absolute -top-32 left-1/2 mr-16 -translate-x-1/2 w-[140%] h-[500px] bg-gradient-to-b from-sky-100 via-sky-50/50 to-transparent blur-3xl pointer-events-none z-0" />
-
+      {/* Background Gradient/Blobs */}
+      <div className="absolute -top-32 left-2/3 mr-32 -translate-x-1/2 w-[100%] h-[500px] bg-gradient-to-b from-sky-100 via-sky-50/50 to-transparent blur-3xl pointer-events-none z-0" />
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[10%] left-[0%] w-[500px] h-[500px] bg-blue-200/40 rounded-full blur-3xl opacity-60" />
         <div className="absolute bottom-[10%] right-[0%] w-[600px] h-[600px] bg-sky-200/40 rounded-full blur-3xl opacity-60" />
@@ -45,7 +46,10 @@ export function AboutSection() {
 
       <div className="site-container relative z-10">
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 lg:gap-20 xl:gap-24 items-center">
-          <div className="relative flex justify-center lg:justify-end perspective-1000 group section-item-reveal stagger-1">
+          
+          {/* LEFT: Image/Graphic Section */}
+          {/* FIX: Changed lg:justify-end to lg:justify-center to prevent the image from sticking to the far right */}
+          <div className="relative flex justify-center lg:justify-center perspective-1000 group section-item-reveal stagger-1">
             <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 transition-transform duration-100 ease-out transform-style-3d will-change-transform">
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-sky-400 to-blue-600 opacity-20 blur-2xl" />
               <div className="absolute inset-4 bg-gradient-to-br from-white/40 to-white/10 backdrop-blur-xl border border-white/50 rounded-[2.5rem] shadow-2xl flex items-center justify-center overflow-hidden">
@@ -55,7 +59,7 @@ export function AboutSection() {
                     <div className="absolute inset-1 bg-blue-50 rounded-[1.5rem] overflow-hidden">
                       <MapIcon className="w-full h-full text-blue-200 opacity-50 scale-150" />
                       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                        <div className="w-4 h-4 bg-red-600 rounded-full border-2 border-white shadow-lg" />
+                        <div className="w-4 h-4 bg-red-600 rounded-full border-2 border-white shadow-lg animate-pulse" />
                       </div>
                     </div>
                   </div>
@@ -64,7 +68,8 @@ export function AboutSection() {
             </div>
           </div>
 
-          <div className="flex mt-4 flex-col gap-8 items-center md:items-start text-center md:text-left">
+          {/* RIGHT: Text/Features Section */}
+          <div className="flex flex-col gap-8 px-4 lg:px-8 items-center md:items-start text-center md:text-left">
             <div className="flex flex-col gap-4 items-center md:items-start section-title-reveal">
               <Badge className="w-fit bg-sky-500 text-white hover:bg-sky-600 border-0 px-6 py-2 mb-2 mt-5 md:mb-5 text-sm md:text-base font-bold shadow-lg shadow-sky-600/30">
                 Why Choose Ark Trackers?
@@ -77,7 +82,7 @@ export function AboutSection() {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 gap-6 w-full">
               {features.map((feature, idx) => (
                 <div
                   key={idx}
@@ -92,6 +97,7 @@ export function AboutSection() {
               ))}
             </div>
           </div>
+
         </div>
       </div>
     </section>

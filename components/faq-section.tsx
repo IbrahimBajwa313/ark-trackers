@@ -78,7 +78,7 @@ export function FAQSection() {
   );
 
   return (
-    <section id="faq" ref={container} className="relative py-24 lg:py-32 bg-slate-50 overflow-hidden">
+    <section id="faq" ref={container} className="relative py-8 lg:py-16 bg-slate-50 overflow-hidden">
       
       {/* Top Gradient -> Blends with Testimonials */}
       <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-slate-50 to-transparent pointer-events-none z-10" />

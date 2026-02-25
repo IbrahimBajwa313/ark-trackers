@@ -83,7 +83,7 @@ export function LicensesSection() {
   return (
     <section
       ref={container}
-      className="w-full py-24 lg:py-32 bg-slate-50 relative overflow-hidden perspective-2000"
+      className="w-full py-8 lg:py-16 bg-slate-50 relative overflow-hidden perspective-2000"
     >
         {/* Deep Background Glows */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[800px] bg-gradient-to-b from-slate-100/50 to-transparent blur-3xl pointer-events-none -z-10" />

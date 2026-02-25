@@ -25,7 +25,7 @@ export function TestimonialsSection() {
     },
     {
       name: "Muhammad Imran",
-      title: "Rideshare Driver",
+      title: "Business Owner",
       quote:
         "The peace of mind knowing my vehicle is protected 24/7 is priceless. Best investment I've made for my business.",
       rating: 5,
@@ -34,7 +34,7 @@ export function TestimonialsSection() {
     },
     {
       name: "Rashid Yaseen",
-      title: "Nustian",
+      title: "Software Engineer",
       quote:
         "I recommend Ark Trackers PVT to all my Friends. It has helped us to keep our cars safe and sound.",
       rating: 5,
@@ -76,7 +76,7 @@ export function TestimonialsSection() {
   return (
     <section
       ref={container}
-      className="relative py-24 lg:py-32 bg-slate-50 overflow-hidden"
+      className="relative py-8 lg:py-16 bg-slate-50 overflow-hidden"
     >
       {/* Background Decor */}
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay pointer-events-none"></div>

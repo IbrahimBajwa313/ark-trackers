@@ -31,16 +31,15 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
           ? "bg-white/95 backdrop-blur-xl border-b border-slate-200 shadow-md"
           : "bg-white/40 backdrop-blur-md border-b border-white/20 shadow-sm"
-      }`}
+        }`}
     >
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative flex justify-between items-center h-16">
           {/* Logo - Left */}
-          <div className="flex items-center gap-2 z-20">
+          <div className="flex items-center gap-2 z-20 mr-2">
             <Image
               src="/logocropped.png"
               alt="Ark Trackers Logo"
@@ -50,7 +49,7 @@ export default function Navbar() {
             />
             <Link
               href="/"
-              className="font-bold text-xl tracking-wide text-slate-900 hidden sm:block"
+              className="font-bold text-xl tracking-wide text-slate-900 translate-y-2"
             >
               Ark Trackers
             </Link>

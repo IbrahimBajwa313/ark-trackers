@@ -104,7 +104,7 @@ export function PricingSection() {
   return (
     <section
       id="pricing"
-      className="relative w-full py-24 lg:py-32 bg-slate-50/80 overflow-hidden"
+      className="relative w-full py-8 lg:py-16 bg-slate-50/80 overflow-hidden"
       ref={container}
     >
       {/* Background Grid */}
@@ -222,7 +222,7 @@ export function PricingSection() {
             {/* Badge - Shiny and Bolder */}
             <div className="absolute -top-0.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-2 rounded-b-2xl text-sm font-extrabold tracking-wide shadow-lg shadow-blue-500/40 flex items-center gap-2 z-20">
                <Zap className="w-4 h-4 fill-yellow-300 text-yellow-300 animate-pulse" /> 
-               MOST POPULAR
+                POPULAR
                {/* Shine animation on badge */}
                <div className="absolute inset-0 w-full h-full overflow-hidden rounded-b-2xl pointer-events-none">
                   <div className="absolute top-0 -left-[100%] w-[50%] h-full bg-white/30 skew-x-[-20deg] animate-[shine_3s_infinite]" />

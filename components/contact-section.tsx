@@ -89,7 +89,7 @@ export function ContactSection() {
     <section
       ref={container}
       id="contact"
-      className="relative py-24 lg:py-32 bg-slate-50 overflow-hidden"
+      className="relative py-8 lg:py-16 bg-slate-50 overflow-hidden"
     >
       {/* Background Decor - Consistent with Hero/About */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-100/30 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />

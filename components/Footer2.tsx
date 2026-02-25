@@ -23,7 +23,7 @@ export default function Footer2() {
   return (
     <footer className="relative bg-[#0F172A] text-slate-200 overflow-hidden font-sans border-t border-slate-800">
       
-      {/* Deep Background Gradients - Slightly Lighter & Brighter */}
+      {/* Deep Background Gradients */}
       <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none mix-blend-screen" />
       <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[120px] translate-y-1/2 pointer-events-none mix-blend-screen" />
       
@@ -151,19 +151,13 @@ export default function Footer2() {
                    </div>
                 </li>
              </ul>
-             <div className="mt-6 mb-6 flex items-center gap-2 bg-slate-800 px-6 py-3 rounded-full border border-slate-700 hover:border-blue-400/30 transition-colors group w-fit hover:bg-slate-750 shadow-lg shadow-black/20">
-              <span className="text-sm font-medium text-slate-400">Made by</span>
-              <a href="https://www.techcognify.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors">
-                 <span className="font-bold tracking-wide group-hover:text-blue-300 transition-colors text-sm">TechCognify</span>
-                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
-           </div>
+            
           </div>
 
         </div>
 
         {/* Bottom Bar - Brighter & Inline with Socials */}
-        <div className=" flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 font-medium">
+        <div className="flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 font-medium mt-12">
            
            <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6">
               <p>&copy; {currentYear} Ark Trackers Pvt Ltd. All rights reserved.</p>
@@ -194,6 +188,22 @@ export default function Footer2() {
                    </a>
                 ))}
              </div>
+        </div>
+
+        {/* Developer Credit - Clean, Centered, Integrated */}
+        <div className="mt-8 pt-6 border-t border-slate-800/50 flex flex-col items-center justify-center gap-2">
+           <p className="text-xs text-slate-500 font-medium flex items-center gap-2">
+              <span>Designed & Developed by</span>
+              <a 
+                href="https://www.techcognify.com/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="group flex items-center gap-1.5 text-slate-300 hover:text-blue-400 transition-all duration-300"
+              >
+                 <span className="font-bold tracking-wide">TechCognify</span>
+                 <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
+              </a>
+           </p>
         </div>
 
         
