@@ -89,14 +89,14 @@ export function ContactSection() {
     <section
       ref={container}
       id="contact"
-      className="relative py-8 lg:py-16 bg-slate-50 overflow-hidden"
+      className="relative py-12 md:py-20 lg:py-24 bg-white overflow-hidden border-t border-slate-100/80"
     >
       {/* Background Decor - Consistent with Hero/About */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-100/30 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-cyan-100/30 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2 pointer-events-none" />
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-soft-light pointer-events-none" />
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="site-container relative z-10">
         <div ref={headerRef} className="text-center mb-12 md:mb-16 max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-sm font-bold tracking-widest text-blue-600 uppercase bg-blue-50/80 backdrop-blur-sm rounded-full border border-blue-100 shadow-sm">
              <Mail className="w-4 h-4" />

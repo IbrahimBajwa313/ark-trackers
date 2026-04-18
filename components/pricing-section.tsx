@@ -104,7 +104,7 @@ export function PricingSection() {
   return (
     <section
       id="pricing"
-      className="relative w-full py-8 lg:py-16 bg-slate-50/80 overflow-hidden"
+      className="relative w-full py-12 md:py-20 lg:py-24 bg-white overflow-hidden border-t border-slate-100/80"
       ref={container}
     >
       {/* Background Grid */}
@@ -142,7 +142,7 @@ export function PricingSection() {
         />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="site-container relative z-10">
         {/* Header */}
         <div ref={titleRef} className="text-center mb-16 max-w-3xl mx-auto">
           <div className="inline-block px-4 py-1.5 mb-6 text-sm font-bold tracking-wider text-blue-700 uppercase bg-blue-50 rounded-full border border-blue-200 shadow-sm">

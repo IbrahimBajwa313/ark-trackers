@@ -67,17 +67,16 @@ function HeroContent() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
-  const reveal = mounted ? "hero-reveal" : "opacity-0";
+  const reveal = mounted ? "hero-reveal" : "opacity-0 translate-y-5";
 
   return (
-    // CHANGED: 'sm:px-4' is now 'px-4 sm:px-0' to add side padding on mobile only
-    <div className="site-container relative z-10 w-full h-full flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-8 xl:gap-12 pt-4 pb-4 px-4 sm:px-0 lg:py-0">
+    <div className="site-container relative z-10 w-full h-full flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-10 xl:gap-14 pt-4 pb-8 px-4 sm:px-0 lg:py-4 min-h-0">
       
       {/* Left: Copy + features + CTA */}
       <div className="w-full lg:w-[45%] flex flex-col sm:ml-4 lg:ml-16 gap-6 md:gap-8 items-start z-20 lg:justify-center">
         
         {/* Desktop: badge + headline block */}
-        <div className={`hidden lg:flex flex-col gap-4  transition-all duration-500 ${reveal}`} style={{ transitionDelay: "0.05s" }}>
+        <div className={`hidden lg:flex flex-col gap-4 transition-all duration-700 ease-out ${reveal}`} style={{ transitionDelay: "0.05s" }}>
           <Badge className="w-fit  bg-sky-500 hover:bg-sky-600 text-white border-0 px-4 py-1.5 text-xs font-bold shadow-lg shadow-sky-500/30">
             {slide.badge}
           </Badge>
@@ -106,7 +105,7 @@ function HeroContent() {
           {features.map((feat, i) => (
             <div
               key={i}
-              className={`flex items-center gap-3 bg-white/80 backdrop-blur-sm p-3 md:p-3.5 rounded-xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-sky-200 hover:bg-white transition-all duration-300 group ${reveal}`}
+              className={`flex items-center gap-3 bg-white/90 backdrop-blur-md p-3 md:p-3.5 rounded-xl border border-slate-200/70 shadow-sm hover:shadow-lg hover:border-sky-200/80 hover:bg-white transition-all duration-700 ease-out group ${reveal}`}
               style={{ transitionDelay: `${0.1 + i * 0.04}s` }}
             >
               <div className={`shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br ${feat.color} flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform`}>
@@ -120,7 +119,7 @@ function HeroContent() {
         </div>
 
         {/* CTA + trust line */}
-        <div className={`flex flex-col gap-4 w-full sm:w-auto ${reveal}`} style={{ transitionDelay: "0.35s" }}>
+        <div className={`flex flex-col gap-4 w-full sm:w-auto transition-all duration-700 ease-out ${reveal}`} style={{ transitionDelay: "0.35s" }}>
           <div className="flex flex-col sm:flex-row gap-3">
             <Button
               asChild
@@ -149,14 +148,17 @@ function HeroContent() {
       </div>
 
       {/* Right: 3D hero */}
-      <div className="w-full h-[50vh] min-h-[280px] sm:h-[58vh] md:h-[68vh] lg:w-[50%] lg:h-[80vh]  flex items-center justify-center">
-        <div className={`relative w-full h-full max-w-2xl xl:max-w-3xl   rounded-xl md:rounded-2xl overflow-hidden shadow-xl shadow-slate-200/50 ${reveal}`} style={{ transitionDelay: "0.1s" }}>
+      <div className="w-full h-[46vh] min-h-[260px] sm:h-[54vh] md:h-[62vh] lg:w-[52%] lg:h-[min(85vh,820px)] flex items-center justify-center">
+        <div
+          className={`relative w-full h-full max-w-2xl xl:max-w-3xl rounded-2xl md:rounded-3xl overflow-hidden border border-sky-200/40 bg-gradient-to-br from-white/80 via-sky-50/40 to-blue-50/30 shadow-[0_20px_60px_-15px_rgba(14,165,233,0.18)] ring-1 ring-white/60 transition-all duration-700 ease-out ${reveal}`}
+          style={{ transitionDelay: "0.1s" }}
+        >
           <HeroScene />
         </div>
       </div>
 
       {/* Mobile-only: headline block at top (flex-col-reverse puts this above content on mobile) */}
-      <div className={`w-full flex flex-col items-start lg:hidden z-30 ${reveal}`} style={{ transitionDelay: "0.02s" }}>
+      <div className={`w-full flex flex-col items-start lg:hidden z-30 transition-all duration-700 ease-out ${reveal}`} style={{ transitionDelay: "0.02s" }}>
         <Badge className="mb-2 bg-sky-500 hover:bg-sky-600 text-white border-0 px-4 py-1.5 text-xs font-bold shadow-lg shadow-sky-500/30">
           {slide.badge}
         </Badge>
@@ -179,7 +181,7 @@ function HeroContent() {
 
 export function HeroSection() {
   return (
-    <section className="min-h-screen w-full bg-slate-50 flex flex-col items-center justify-center relative pt-20 lg:pt-0 overflow-hidden">
+    <section className="min-h-[100dvh] w-full bg-gradient-to-b from-slate-50 via-sky-50/30 to-slate-50 flex flex-col items-center justify-center relative pt-[4.5rem] pb-10 lg:pt-20 lg:pb-16 overflow-hidden">
       {/* Grid background */}
       <div
         className="absolute inset-0 z-0 opacity-30 pointer-events-none"
@@ -198,8 +200,8 @@ export function HeroSection() {
         </svg>
       </div>
 
-      {/* Bottom gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-white/80 via-sky-50/30 to-transparent pointer-events-none z-0" />
+      {/* Bottom fade into next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-48 md:h-64 bg-gradient-to-t from-white via-slate-50/90 to-transparent pointer-events-none z-0" />
 
       {/* Blobs */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">

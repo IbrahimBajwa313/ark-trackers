@@ -76,18 +76,18 @@ export function TestimonialsSection() {
   return (
     <section
       ref={container}
-      className="relative py-8 lg:py-16 bg-slate-50 overflow-hidden"
+      className="relative py-12 md:py-20 lg:py-24 bg-white overflow-hidden border-t border-slate-100/80"
     >
       {/* Background Decor */}
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay pointer-events-none"></div>
       
-      {/* Top Gradient -> Blends with Pricing */}
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-slate-50 to-transparent pointer-events-none z-10" />
+      {/* Top Gradient -> Blends with Licenses */}
+      <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-slate-50/80 to-transparent pointer-events-none z-10" />
 
       {/* Bottom Gradient -> Blends with FAQ */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-slate-50 to-transparent pointer-events-none z-10" />
+      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-slate-50/60 to-transparent pointer-events-none z-10" />
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="site-container relative z-10">
         <div ref={headerRef} className="text-center mb-12 md:mb-20 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-sm font-bold tracking-widest text-blue-600 uppercase bg-blue-50 rounded-full border border-blue-100">
              <Star className="w-4 h-4 fill-blue-600" />
@@ -97,7 +97,7 @@ export function TestimonialsSection() {
             Trusted by <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Business Leaders</span>
           </h2>
            <p className="text-xl font-medium text-slate-600 max-w-2xl mx-auto leading-relaxed">
-             Join thousands of satisfied usage who rely on Ark Trackers for their fleet security and management.
+             Join thousands of satisfied customers who rely on Ark Trackers for their fleet security and management.
           </p>
         </div>
 

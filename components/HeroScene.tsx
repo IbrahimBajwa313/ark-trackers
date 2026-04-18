@@ -156,7 +156,7 @@ export default function HeroScene() {
   }, [carReady]);
 
   return (
-    <div className="w-full h-full relative mt-16 touch-pan-y">
+    <div className="w-full h-full relative mt-6 md:mt-10 touch-pan-y">
       <Canvas shadows dpr={[1, 2]} camera={{ fov: 45 }} className="touch-pan-y">
         <ResponsiveCamera setIsMobile={setIsMobile} />
         <Suspense fallback={null}>

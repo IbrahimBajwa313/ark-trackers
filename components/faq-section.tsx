@@ -78,15 +78,15 @@ export function FAQSection() {
   );
 
   return (
-    <section id="faq" ref={container} className="relative py-8 lg:py-16 bg-slate-50 overflow-hidden">
+    <section id="faq" ref={container} className="relative py-12 md:py-20 lg:py-24 bg-slate-50/90 overflow-hidden border-t border-slate-100/60">
       
       {/* Top Gradient -> Blends with Testimonials */}
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-slate-50 to-transparent pointer-events-none z-10" />
+      <div className="absolute top-0 left-0 w-full h-28 bg-gradient-to-b from-white to-transparent pointer-events-none z-10" />
 
       {/* Background Decor */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-sky-50/50 rounded-full blur-[100px] pointer-events-none -z-0" />
 
-      <div className="container mx-auto px-4 relative z-10 max-w-4xl">
+      <div className="site-container relative z-10 max-w-4xl">
         <div ref={headerRef} className="text-center mb-12 md:mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-sm font-bold tracking-widest text-sky-600 uppercase bg-sky-50 rounded-full border border-sky-100">
              <HelpCircle className="w-4 h-4" />

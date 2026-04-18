@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Car } from "lucide-react";
+import { Menu, X, Car, MessageCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -32,31 +32,31 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
-          ? "bg-white/95 backdrop-blur-xl border-b border-slate-200 shadow-md"
-          : "bg-white/40 backdrop-blur-md border-b border-white/20 shadow-sm"
+          ? "bg-white/95 backdrop-blur-xl border-b border-slate-200/90 shadow-sm"
+          : "bg-white/50 backdrop-blur-xl border-b border-white/30 shadow-sm"
         }`}
     >
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative flex justify-between items-center h-16">
+        <div className="relative flex justify-between items-center h-16 md:h-[4.25rem]">
           {/* Logo - Left */}
-          <div className="flex items-center gap-2 z-20 mr-2">
+          <div className="flex items-center gap-2.5 z-20 mr-2 min-w-0">
             <Image
               src="/logocropped.png"
               alt="Ark Trackers Logo"
-              width={56}
-              height={56}
-              className="object-contain"
+              width={48}
+              height={48}
+              className="object-contain shrink-0 md:w-[52px] md:h-[52px]"
             />
             <Link
               href="/"
-              className="font-bold text-xl tracking-wide text-slate-900 translate-y-2"
+              className="font-bold text-lg sm:text-xl tracking-tight text-slate-900 leading-none truncate"
             >
               Ark Trackers
             </Link>
           </div>
 
           {/* Desktop Menu - Centered */}
-          <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-1">
+          <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-0.5">
             {[
               { name: "Home", href: "/" },
               { name: "About", href: "/about" },
@@ -68,7 +68,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="px-4 py-1.5 rounded-full text-[14px] font-medium tracking-wide text-slate-700 hover:bg-slate-100/80 hover:text-slate-900 transition-all duration-300"
+                className="px-3.5 py-2 rounded-full text-[13px] font-medium tracking-wide text-slate-600 hover:bg-slate-100/90 hover:text-slate-900 transition-all duration-200"
               >
                 {link.name}
               </Link>
@@ -76,14 +76,22 @@ export default function Navbar() {
           </div>
 
           {/* Right Side Actions */}
-          <div className="flex items-center gap-1 sm:gap-2 z-20">
-            {/* Pricing Link */}
+          <div className="flex items-center gap-2 sm:gap-3 z-20">
+            <a
+              href="https://wa.me/923007609299?text=Hi%2C%20I'm%20interested%20in%20vehicle%20tracking.%20Can%20you%20share%20details%3F"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden lg:inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-sky-500 to-cyan-600 rounded-full shadow-md shadow-sky-500/25 hover:shadow-lg hover:from-sky-600 hover:to-cyan-700 transition-all duration-200"
+            >
+              <MessageCircle className="w-4 h-4 shrink-0" />
+              WhatsApp
+            </a>
             <Link
               href="/pricing"
-              className="hidden md:flex items-center gap-2 px-4 py-2 text-sm font-medium tracking-wide text-blue-600 hover:bg-blue-50/80 rounded-full transition-colors"
+              className="hidden md:flex items-center gap-2 px-3.5 py-2 text-sm font-semibold text-sky-700 bg-sky-50/90 hover:bg-sky-100 rounded-full border border-sky-200/60 transition-colors"
             >
-              <span>Track Vehicle</span>
-              <Car className="w-5 h-5" />
+              <span>Plans</span>
+              <Car className="w-4 h-4 shrink-0" />
             </Link>
 
             {/* Mobile Menu Button */}
@@ -116,11 +124,21 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
+            <a
+              href="https://wa.me/923007609299?text=Hi%2C%20I'm%20interested%20in%20vehicle%20tracking.%20Can%20you%20share%20details%3F"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full mt-4 px-6 py-3 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-sky-500 to-cyan-600 text-white rounded-full text-sm font-semibold shadow-md shadow-sky-500/25"
+              onClick={() => setIsOpen(false)}
+            >
+              <MessageCircle className="w-4 h-4" />
+              Chat on WhatsApp
+            </a>
             <button
-              className="w-full mt-4 px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-full text-sm font-medium hover:shadow-lg hover:shadow-blue-500/40 transition-all"
+              className="w-full mt-2 px-6 py-2.5 border border-slate-200 text-slate-800 rounded-full text-sm font-semibold hover:bg-slate-50 transition-colors"
               onClick={handleGetStarted}
             >
-              Get Started
+              View pricing
             </button>
           </div>
         )}

@@ -107,21 +107,21 @@ export function StatsSection() {
   return (
     <section
       ref={container}
-      className="relative py-20 lg:py-32 overflow-hidden flex flex-col items-center"
+      className="relative py-12 md:py-20 lg:py-28 overflow-hidden flex flex-col items-center border-t border-slate-100/70 bg-slate-50/60"
       id="stats"
     >
         {/* Ambient Background Gradient */}
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-blue-50/50 to-transparent pointer-events-none" />
         
         {/* Top Fade - blends with About Section */}
-        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-slate-50 to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
 
         {/* Bottom Fade - blends with Pricing Section */}
-        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-slate-50/80 to-transparent z-10 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white/90 to-transparent z-10 pointer-events-none" />
 
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-blue-200/20 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="site-container relative z-10">
         <div className="text-center mb-8 md:mb-16">
           <h2 ref={titleRef} className="text-2xl md:text-5xl font-bold text-slate-900 leading-tight opacity-0 px-4">
              Trusted by <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Hundreds of Thousands</span>

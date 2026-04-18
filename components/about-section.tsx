@@ -19,7 +19,7 @@ export function AboutSection() {
   return (
     <section
       ref={ref}
-      className={`relative min-h-screen section-padding bg-slate-50 overflow-hidden flex items-center ${sectionClass}`}
+      className={`relative min-h-[min(100dvh,920px)] section-padding bg-white border-t border-slate-100 overflow-hidden flex items-center ${sectionClass}`}
       id="about"
     >
       {/* Background Grid */}

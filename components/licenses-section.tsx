@@ -83,12 +83,12 @@ export function LicensesSection() {
   return (
     <section
       ref={container}
-      className="w-full py-8 lg:py-16 bg-slate-50 relative overflow-hidden perspective-2000"
+      className="w-full py-12 md:py-20 lg:py-24 bg-slate-50/95 relative overflow-hidden perspective-2000 border-t border-slate-100/80"
     >
         {/* Deep Background Glows */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[800px] bg-gradient-to-b from-slate-100/50 to-transparent blur-3xl pointer-events-none -z-10" />
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="site-container relative z-10">
         <div ref={headerRef} className="text-center mb-12 md:mb-20 max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-sm font-bold tracking-widest text-slate-500 uppercase bg-white/50 backdrop-blur-sm rounded-full border border-slate-200 shadow-sm">
              <ShieldCheck className="w-4 h-4 text-blue-600" />
