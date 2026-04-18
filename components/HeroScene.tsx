@@ -6,59 +6,38 @@ import { Environment, ContactShadows, Html, Line, PerspectiveCamera } from "@rea
 import { CarModel, CarModelRef } from "./CarModel";
 import * as THREE from "three";
 import { Badge } from "@/components/ui/badge";
-import { Smartphone, Monitor, Camera, Map, Clock, History, Globe } from "lucide-react";
-import Image from "next/image";
+import { Mic, MapPin, GaugeCircle, PlayCircle } from "lucide-react";
 
 // --- UPDATED POSITIONS FOR BETTER LAYOUT ---
-// We compressed the X values slightly so labels fit better when the camera is closer (larger car).
 // 'pos' is the floating label position. 'targetLocal' is where the line connects to the car.
 const PARTS_DATA = [
-  { 
-    label: "ADAS CAMERA", 
-    icon: null, 
-    isImage: true, 
-    src: "/mdvr-adas-camera.png", 
-    // Adjusted X from -2.5 to -1.8 to keep it in frame when zoomed in
-    pos: [-1.8, 1.8, 2.0], 
-    mobilePos: [-3.6, .3, -1.5], 
-    targetLocal: [-0.5, 0.6, 2.0] 
+  {
+    label: "VOICE CONTROL",
+    icon: Mic,
+    pos: [-1.6, 2.6, 0.5],
+    mobilePos: [-1.2, 2.9, -1.0],
+    targetLocal: [-0.2, 1.0, 0.5],
   },
-  { 
-    label: "DMS CAMERA", 
-    icon: null, 
-    isImage: true, 
-    src: "/mdvr-dsm-camera.png", 
-    pos: [-1.6, 2.6, 0.5], 
-    mobilePos: [-1.2, 2.9, -1.0], 
-    targetLocal: [-0.2, 1.0, 0.5] 
+  {
+    label: "GEO FENCE ALERT",
+    icon: MapPin,
+    pos: [1.2, 3.2, -1.5],
+    mobilePos: [1.8, 2.9, -1.0],
+    targetLocal: [0.3, 1.0, 0.8],
   },
-  // { 
-  //   label: "4-CH MDVR", 
-  //   icon: null, 
-  //   isImage: true, 
-  //   src: "/mdvr.png", 
-  //   // Adjusted X and Y for a more balanced overhead look
-  //   pos: [-0.2, 3.2, -1.5], 
-  //   mobilePos: [0.5, 3.8, -1.0], 
-  //   targetLocal: [0.8, 0.2, -1.0] 
-  // },
-  { 
-    label: "DISPLAY", 
-    icon: Monitor, 
-    isImage: false, 
-    src: "", 
-    pos: [1.2, 3.2, -1.5], 
-    mobilePos: [1.8, 2.9, -1.0], 
-    targetLocal: [0.3, 1.0, 0.8] 
+  {
+    label: "MILEAGE REPORT",
+    icon: GaugeCircle,
+    pos: [-1.8, 1.8, 2.0],
+    mobilePos: [-3.6, 0.3, -1.5],
+    targetLocal: [-0.5, 0.6, 2.0],
   },
-  { 
-    label: "CH-2", 
-    icon: Camera, 
-    isImage: false, 
-    src: "", 
-    pos: [2.2, 1.9, 0.8], 
-    mobilePos: [3.8, .3, -1.0], 
-    targetLocal: [1.1, 0.5, 0] 
+  {
+    label: "HISTORY PLAYBACK",
+    icon: PlayCircle,
+    pos: [2.2, 1.9, 0.8],
+    mobilePos: [3.8, 0.3, -1.0],
+    targetLocal: [1.1, 0.5, 0],
   },
 ];
 
@@ -213,13 +192,7 @@ export default function HeroScene() {
                         style={{ pointerEvents: 'auto' }}
                     >
                         <div className={`relative w-12 h-12 md:w-16 md:h-16 bg-white/90 backdrop-blur-md rounded-full shadow-xl p-2 border-2 ${BORDER_COLOR} flex items-center justify-center group hover:scale-110 transition-transform duration-300 cursor-pointer`}>
-                             {item.isImage ? (
-                                <div className="relative w-full h-full"> 
-                                    <Image src={item.src} alt={item.label} fill className="object-contain p-1.5" />
-                                </div>
-                             ) : (
-                                item.icon && <item.icon className="w-8 h-8 md:w-8 md:h-8 text-slate-800" />
-                             )}
+                             <item.icon className="w-7 h-7 md:w-8 md:h-8 text-slate-800" strokeWidth={1.75} />
                         </div>
                         <Badge className={`bg-white/90 backdrop-blur-md text-slate-800 border-2 ${BORDER_COLOR} text-[9px] md:text-[10px] font-bold px-2.5 py-0.5 shadow-lg whitespace-nowrap`}>
                             {item.label}
